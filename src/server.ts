@@ -7,8 +7,6 @@ import { consultRouter } from './routes/consult.router';
 const app = express()
 const port = process.env.PORT
 
-
-
 connectToDatabase()
   .then(() => {
     app.use(cors())
@@ -20,4 +18,3 @@ connectToDatabase()
       console.log(`Server started at Port: ${port}`);
     })
   })
-

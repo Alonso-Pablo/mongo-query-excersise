@@ -10,7 +10,7 @@ export let database: mongoDB.Db
 export async function connectToDatabase () {
   const mongoUri = process.env.MONGO_URI as string;
   const client: mongoDB.MongoClient = new mongoDB.MongoClient(mongoUri);
-          
+
   await client.connect();
 
   const mongoDBName = process.env.MONGO_DB_NAME as string;
@@ -19,7 +19,6 @@ export async function connectToDatabase () {
  
   const mongoShippingsCollectionName = process.env.MONGO_SHIPPINGS_COLLECTION_NAME as string;
   const shippingsCollection: mongoDB.Collection = db.collection(mongoShippingsCollectionName);
-
 
   collections.shippings = shippingsCollection;
 

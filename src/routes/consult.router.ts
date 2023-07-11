@@ -16,7 +16,6 @@ consultRouter.get("/", async (_req: Request, res: Response) => {
           "foreignField": "_id",
           "as": "shipping_orders_docs"
         },
-        
       },
       {
         "$unwind": "$shipping_orders_docs"
@@ -51,9 +50,7 @@ consultRouter.get("/", async (_req: Request, res: Response) => {
             }
           },
           "total_amount": "$shipping_orders_docs.total_amount",
-          
         },
-        
       },
       {
         "$group": {
@@ -70,7 +67,6 @@ consultRouter.get("/", async (_req: Request, res: Response) => {
           "total_amount": {
             $sum: "$total_amount"
           },
-          
         }
       },
       {

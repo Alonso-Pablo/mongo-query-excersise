@@ -1,6 +1,5 @@
 import { ObjectId } from "mongodb";
 
-
 export interface IShippingOrder {
   id?: ObjectId;
   total_amount: number;
